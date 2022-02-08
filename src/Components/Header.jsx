@@ -1,50 +1,64 @@
 import Logo from '../Images/logo_fizzmod.svg';
 import SearchIcon from '../Images/icone-loupe-gris.png';
-import Cart from '../Images/cart.png';
+import cart from '../Images/icono-carrito.png';
+import { DataContext } from '../context/context';
+import { useContext } from 'react';
 
 const Header = () => {
     
+    const [state] = useContext(DataContext);
+
      return(
          <div className='header'>
             <nav className='nav'>
-                <div class="navbar">
-                    <div class="container nav-container">
-                        {/* carrito */}
-                        <div className='cart-container'>
-                            <a href="#"><img src={Cart} alt="" className='cart'/></a>
-                        </div>
+                <div className="navbar">
+                    <div className="container nav-container">
                         {/* menu hamburguesa */}
-                        <input class="checkbox" type="checkbox" name="" id="" />
-                        <div class="hamburger-lines">
-                            <span class="line line1"></span>
-                            <span class="line line2"></span>
-                            <span class="line line3"></span>
+                        <input className="checkbox" type="checkbox" name="" id="" />
+                        <div className="hamburger-lines">
+                            <span className="line line1"></span>
+                            <span className="line line2"></span>
+                            <span className="line line3"></span>
                         </div> 
                         {/* logo  */}
                         <a href="/" className='logo'>
                             <img src={Logo} alt="" />
                         </a>
-                        <div class="menu-items">
-                            <li><a href="#">Ayuda</a></li>
-                            <li><a href="#">Mis pedidos</a></li>
-                            <li><a href="#">Mi cuenta</a></li>
+                        <div className='menu-desk-container'>
+                            <div className="menu-items">
+                                <li><a href="#">Ayuda</a></li>
+                                <li><a href="#">Mis pedidos</a></li>
+                                <li><a href="#">Mi cuenta</a></li>
+                            </div>
+                            <form action="" className='search'>
+                                <div className='search-container'>
+                                    <button className='nav-icon-search'>
+                                        <img src={SearchIcon} alt="" className='search-icon'/>
+                                    </button>
+                                    <input type="text" placeholder='Buscar un producto...' className='input-search' />
+                                </div>
+                            </form>
+                            <button className='btn-cart'>
+                                <img src={cart} alt="" />
+                                <p>MI CARRITO</p>
+                            </button>
                         </div>
                     </div>
-                </div>
-                <form action="" className='search'>
-                    <input type="text" placeholder='Buscar un producto...' />
-                    <button className='nav-icon-search'>
-                        <img src={SearchIcon} alt="" className='search-icon'/>
-                    </button>
-                </form>
+                    <form action="" className='search-mobile'>
+                        <div className='search-container'>
+                            <button className='nav-icon-search'>
+                                <img src={SearchIcon} alt="" className='search-icon'/>
+                            </button>
+                            <input type="text" placeholder='Buscar un producto...' />
+                        </div>
+                    </form>
                 <div className='menu-categories'>
                     <ul>
-                        <li><a href="category">categoria</a></li>
-                        <li><a href="category">categoria</a></li>
-                        <li><a href="category">categoria</a></li>
-                        <li><a href="category">categoria</a></li>
-                        <li><a href="category">categoria</a></li>
+                        {state.categories.map((category) => (
+                            <li key={category.title}><a href={category.href}>{category.title}</a></li>
+                        ))}
                     </ul>
+                </div>
                 </div>
                 <a href="#cart">
                     <img src="" alt="" />

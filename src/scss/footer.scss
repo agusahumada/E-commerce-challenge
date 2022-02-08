@@ -1,0 +1,19 @@
+.footer {
+    background-color: $darkGrey;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .products-list {
+        .title-list-footer {
+            font-size: 15px;
+            font-weight: 500;
+            padding: 2px;
+            border-bottom: 1px solid #ffffff;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 13px;
+        }
+    }
+}

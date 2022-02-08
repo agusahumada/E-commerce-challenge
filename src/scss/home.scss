@@ -1,0 +1,58 @@
+section {
+    .slides {
+        div {
+            a {
+                display: block;
+            }
+        }
+    }
+    .products-checkbox {
+        .title-check-form {
+            font-size: 16px;
+            color: $darkGrey;
+            margin-left: 20px;
+        }
+        .form-checkbox {
+            margin-left: 20px;
+            .checkbox:checked+label::before {
+                background-color: $aquamarine!important;
+            }
+            label {
+                height: 20px;
+                width: 19px;
+                color: $darkGrey;
+                font-family: "Open Sans";
+                font-size: 15px;
+                font-weight: 300;
+                letter-spacing: 0;
+                line-height: 20px;
+            }
+            label:hover {
+                color: $aquamarine;
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        .products-checkbox {
+            display: flex;
+            .container-check {
+                width: 30%;
+            }
+            .products-container {
+                flex-wrap: wrap;
+                width: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                .card-product {
+                    padding: 10px;
+                    border: 1px solid #1E1E1E;
+                    height: 331px;
+                    width: 250px;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

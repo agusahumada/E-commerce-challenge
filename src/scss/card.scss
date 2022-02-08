@@ -1,0 +1,102 @@
+.products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .card-product {
+        position: relative;
+        padding: 10px;
+        padding-bottom: 20px;
+        border: 1px solid $darkGrey;
+        height: 331px;
+        width: 240px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        .discount {
+            position: absolute;
+            z-index: 1;
+            background-color: #1DB779;
+            border: 1px;
+            border-radius: 347px;
+            padding: 8px;
+            width: 30px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            padding-right: 13px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+        .image-card {
+            position: absolute;
+            bottom: 129px;
+            left: 21px
+        }
+        .card-data {
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            width: 92%;
+            padding-bottom: 20px;
+            .title-card {
+                color: $darkGrey;
+                font-size: 22px;
+                margin: 0px;
+            }
+            .listPrice-card {
+                color: $lightGrey;
+                font-size: 18px;
+            }
+            .sellingPrice-card {
+                color: $aquamarine;
+                font-size: 22px;
+                font-weight: 700;
+                margin: 0px;
+            }
+        }
+    }
+    .card-product:hover {
+        cursor: pointer;
+        .title-card {
+            color: $aquamarine;
+        }
+    }
+    @media (min-width: 768px) {
+        .card-product {
+            position: relative;
+            padding: 10px;
+            border: 1px solid $darkGrey;
+            height: 331px;
+            width: 236px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            .discount {
+                position: absolute;
+                z-index: 1;
+            }
+            .image-card {
+                position: absolute;
+                bottom: 129px;
+                left: 21px
+            }
+            .card-data {
+                position: absolute;
+                bottom: 0px;
+                text-align: center;
+                .title-card {
+                    color: $darkGrey;
+                    font-size: 22px;
+                }
+                .listPrice-card {
+                    color: $lightGrey;
+                    font-size: 18px;
+                }
+                .sellingPrice-card {
+                    color: $aquamarine;
+                    font-size: 22px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
