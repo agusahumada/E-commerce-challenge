@@ -1,8 +1,14 @@
 section {
+    position: relative;
+    top: 428px;
     .slides {
         div {
             a {
                 display: block;
+                padding: 0;
+                img {
+                    width: 100%;
+                }
             }
         }
     }
@@ -12,27 +18,39 @@ section {
             color: $darkGrey;
             margin-left: 20px;
         }
-        .form-checkbox {
-            margin-left: 20px;
-            .checkbox:checked+label::before {
-                background-color: $aquamarine!important;
-            }
-            label {
-                height: 20px;
-                width: 19px;
-                color: $darkGrey;
-                font-family: "Open Sans";
-                font-size: 15px;
-                font-weight: 300;
-                letter-spacing: 0;
-                line-height: 20px;
-            }
-            label:hover {
-                color: $aquamarine;
+        .container-check {
+            .form-checkbox {
+                margin-left: 20px;
+                .checkbox:checked+label::before {
+                    background-color: $aquamarine!important;
+                }
+                label {
+                    height: 20px;
+                    width: 19px;
+                    color: $darkGrey;
+                    font-family: "Open Sans";
+                    font-size: 15px;
+                    font-weight: 300;
+                    letter-spacing: 0;
+                    line-height: 20px;
+                }
+                label:hover {
+                    color: $aquamarine;
+                }
             }
         }
+        .products-container {
+            margin-bottom: 450px;
+        }
     }
-    @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+    section {
+        top: 170px;
+        .slides {
+            display: block;
+        }
         .products-checkbox {
             display: flex;
             .container-check {

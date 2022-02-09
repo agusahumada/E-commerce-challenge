@@ -3,6 +3,12 @@ $headerColor: #F5F5F5;
 $aquamarine: #1DB779;
 $darkGrey: #1E1E1E;
 $lightGrey: #9B9B9B;
+html {
+    &.test {
+        overflow: hidden;
+    }
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -18,3 +24,4 @@ code {
 @import "home.scss";
 @import "card.scss";
 @import "footer.scss";
+@import "btn_hamburger.scss";

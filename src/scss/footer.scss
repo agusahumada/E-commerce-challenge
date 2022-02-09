@@ -3,17 +3,47 @@
     color: #ffffff;
     padding-top: 20px;
     padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .products-list {
         .title-list-footer {
             font-size: 15px;
             font-weight: 500;
             padding: 2px;
             border-bottom: 1px solid #ffffff;
-            text-align: center;
         }
         p {
             text-align: center;
             font-size: 13px;
+        }
+    }
+    .media-icons {
+        a {
+            img {
+                fill: red;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        grid-template-columns: repeat(4, 1fr);
+        .products-list {
+            grid-column: 1/2;
+        }
+        .products-list {
+            grid-column: 2/3;
+        }
+        .products-list {
+            grid-column: 3/4;
+        }
+        .media-icons {
+            grid-column: 4/4;
         }
     }
 }

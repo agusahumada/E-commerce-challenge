@@ -2,68 +2,79 @@ import Logo from '../Images/logo_fizzmod.svg';
 import SearchIcon from '../Images/icone-loupe-gris.png';
 import cart from '../Images/icono-carrito.png';
 import { DataContext } from '../context/context';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 
 const Header = () => {
     
     const [state] = useContext(DataContext);
+    const [navbarOpen, setNavbarOpen] = useState(false);
+
+    const handleToggle = () => {
+        console.log(navbarOpen);
+        setNavbarOpen(!navbarOpen);
+        const htmlElement = document.querySelector('html');
+        if (!navbarOpen) {
+            console.log(htmlElement);
+            htmlElement.classList.add('test');  
+        }else{
+            htmlElement.classList.remove('test');
+        }
+    }
 
      return(
-         <div className='header'>
-            <nav className='nav'>
-                <div className="navbar">
-                    <div className="container nav-container">
-                        {/* menu hamburguesa */}
-                        <input className="checkbox" type="checkbox" name="" id="" />
-                        <div className="hamburger-lines">
-                            <span className="line line1"></span>
-                            <span className="line line2"></span>
-                            <span className="line line3"></span>
-                        </div> 
-                        {/* logo  */}
-                        <a href="/" className='logo'>
-                            <img src={Logo} alt="" />
-                        </a>
-                        <div className='menu-desk-container'>
-                            <div className="menu-items">
-                                <li><a href="#">Ayuda</a></li>
-                                <li><a href="#">Mis pedidos</a></li>
-                                <li><a href="#">Mi cuenta</a></li>
-                            </div>
-                            <form action="" className='search'>
-                                <div className='search-container'>
-                                    <button className='nav-icon-search'>
-                                        <img src={SearchIcon} alt="" className='search-icon'/>
-                                    </button>
-                                    <input type="text" placeholder='Buscar un producto...' className='input-search' />
-                                </div>
-                            </form>
-                            <button className='btn-cart'>
-                                <img src={cart} alt="" />
-                                <p>MI CARRITO</p>
-                            </button>
-                        </div>
-                    </div>
-                    <form action="" className='search-mobile'>
-                        <div className='search-container'>
-                            <button className='nav-icon-search'>
-                                <img src={SearchIcon} alt="" className='search-icon'/>
-                            </button>
-                            <input type="text" placeholder='Buscar un producto...' />
-                        </div>
-                    </form>
-                <div className='menu-categories'>
+         <div className='header-container'>
+            <div className='header'>
+                <div className='logo-container'>
+                    <img src={Logo} alt="" />
+                </div>
+                <div className='menu-container'>
                     <ul>
-                        {state.categories.map((category) => (
-                            <li key={category.title}><a href={category.href}>{category.title}</a></li>
-                        ))}
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Mis pedidos</a></li>
+                        <li><a href="#">Micuenta</a></li>
                     </ul>
                 </div>
+               {/* menu hamburger */}
+               <nav className='navBar'>
+                    <div className='btn-container'>
+                        <input onChange={()=>{handleToggle()}} type="checkbox" id="checkbox3" className="checkbox3 visuallyHidden"/>
+                        <label htmlFor="checkbox3">
+                            <div className="hamburger hamburger3">
+                                <span className="bar bar1"></span>
+                                <span className="bar bar2"></span>
+                                <span className="bar bar3"></span>
+                                <span className="bar bar4"></span>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+                <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Mis pedidos</a></li>
+                    <li><a href="#">Micuenta</a></li>
+                </ul>
+                <div className='search-container'>
+                    <span>
+                        <img src={SearchIcon} alt=""/>
+                    </span>
+                    <input type="text" className='input-search' placeholder='Buscar un producto...'/>
                 </div>
-                <a href="#cart">
-                    <img src="" alt="" />
-                </a>
-            </nav>
+                <div className='cart-btn-container'>
+                    <button>
+                        <div className='cart-logo-container'>
+                            <img src={cart} alt="" />
+                        </div>
+                        <p>MI CARRITO</p>
+                    </button>
+                </div>
+            </div>
+            <div className='menu-categories'>
+                <ul>
+                    {state.categories.map((category) => (
+                        <li key={category.title}><a href={category.href}>{category.title}</a></li>
+                    ))}
+                </ul>
+            </div>
          </div>
      )
 };
