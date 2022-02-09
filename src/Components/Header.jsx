@@ -1,6 +1,3 @@
-import Logo from '../Images/logo_fizzmod.svg';
-import SearchIcon from '../Images/icone-loupe-gris.png';
-import cart from '../Images/icono-carrito.png';
 import { DataContext } from '../context/context';
 import { useState, useContext } from 'react';
 
@@ -25,7 +22,7 @@ const Header = () => {
          <div className='header-container'>
             <div className='header'>
                 <div className='logo-container'>
-                    <img src={Logo} alt="" />
+                    <img src="./Images/logo_fizzmod.svg" alt="" />
                 </div>
                 <div className='menu-container'>
                     <ul>
@@ -54,15 +51,17 @@ const Header = () => {
                     <li><a href="#">Micuenta</a></li>
                 </ul>
                 <div className='search-container'>
-                    <span>
-                        <img src={SearchIcon} alt=""/>
-                    </span>
-                    <input type="text" className='input-search' placeholder='Buscar un producto...'/>
+                    <div className='input-container'>
+                        <span>
+                            <img src="./Images/icone-loupe-gris.png" alt=""/>
+                        </span>
+                        <input type="text" className='input-search' placeholder='Buscar un producto...'/>
+                    </div>
                 </div>
                 <div className='cart-btn-container'>
                     <button>
                         <div className='cart-logo-container'>
-                            <img src={cart} alt="" />
+                            <img src="./Images/icono-carrito.png" alt="" />
                         </div>
                         <p>MI CARRITO</p>
                     </button>

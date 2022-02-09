@@ -5,9 +5,8 @@
     width: 100%;
     .card-product {
         position: relative;
-        padding: 10px;
+        margin: 10px;
         padding-bottom: 20px;
-        border: 1px solid $darkGrey;
         height: 331px;
         width: 240px;
         margin-bottom: 30px;
@@ -36,11 +35,11 @@
             position: absolute;
             bottom: 0px;
             text-align: center;
-            width: 92%;
+            width: 100%;
             padding-bottom: 20px;
             .title-card {
                 color: $darkGrey;
-                font-size: 22px;
+                font-size: 16px;
                 margin: 0px;
             }
             .listPrice-card {
@@ -57,15 +56,17 @@
     }
     .card-product:hover {
         cursor: pointer;
-        .title-card {
-            color: $aquamarine;
+        .card-data {
+            .title-card {
+                color: $aquamarine;
+                font-family: $fontPrimary;
+            }
         }
     }
     @media (min-width: 768px) {
         .card-product {
             position: relative;
             padding: 10px;
-            border: 1px solid $darkGrey;
             height: 331px;
             width: 236px;
             margin-bottom: 20px;
@@ -85,7 +86,8 @@
                 text-align: center;
                 .title-card {
                     color: $darkGrey;
-                    font-size: 22px;
+                    font-family: $fontPrimary;
+                    font-size: 20px;
                 }
                 .listPrice-card {
                     color: $lightGrey;

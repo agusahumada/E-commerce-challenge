@@ -16,7 +16,7 @@
     list-style: none;
     position: fixed;
     top: 0;
-    background: $aquamarine;
+    background: #1DB779;
     left: -45px;
     bottom: 0;
     height: 100vh;
@@ -29,6 +29,7 @@
     li {
         a {
             color: #ffffff;
+            font-family: $fontPrimary;
         }
     }
 }
@@ -92,7 +93,7 @@ h1 {
     padding: 0;
     width: 30px;
     height: 4px;
-    background-color: maroon;
+    background-color: #25e095;
     display: block;
     border-radius: 4px;
     transition: all 0.4s ease-in-out;

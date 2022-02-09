@@ -45,61 +45,62 @@ const Home = () =>{
     }) 
   }
 
-    return(
-        <section>
-            {state.slides.length === 0 ? null : 
-              <Carousel
-                showIndicators={false}
-                showThumbs={false}
-                autoPlay={true}
-                infiniteLoop={true}
-                showStatus={false}
-                className="slides">
-                {state.slides.map((slide)=>(
-                  <div key={slide.imgName}>
-                      <a href={slide.href}>
-                        <img src={`./Images/BANNERS/${slide.imgName}`} alt=""/>
-                      </a>
-                  </div>
-                ))}
-              </Carousel>
-            }
-            <article className="products-checkbox">
-              <div className="container-check">
-                {state.filters.map((filter, index)=>(
-                  <div key={index}>
-                    <p className="title-check-form">{filter.title}</p>
-                    <form action="" id="" className="form-checkbox">
-                      {filter.values.map((value, index)=>(
-                        <div key={index}>
-                          <input type="checkbox" className="checkbox" id="product1" name="product1" value={value} 
-                          onChange={(e)=>{updateFilters(e)}}/>
-                          <label htmlFor="product1">{value}</label><br></br>
-                        </div>
-                      ))}
-                    </form>
-                  </div>
-                ))}
-              </div>
-              {/* Products list */}
-              <div className="products-container">
-                  {state.products.length === 0 ? (
-                      <p>No hay productos para mostrar</p>
-                  ) : (
-                      state.filteredProducts.map(product =>{
-                          return(
-                              <Card
-                                  product={product}
-                                  key={product.id}
-                              />
-                          )
-                      })
-                  )}
-              </div>
-            </article>
-        </section>
+  return(
+      <section>
+          {state.slides.length === 0 ? null : 
+            <Carousel
+              showIndicators={false}
+              showThumbs={false}
+              autoPlay={true}
+              infiniteLoop={true}
+              showStatus={false}
+              className="slides">
+              {state.slides.map((slide)=>(
+                <div key={slide.imgName}>
+                    <a href={slide.href}>
+                      <img src={`./Images/BANNERS/${slide.imgName}`} alt=""/>
+                    </a>
+                </div>
+              ))}
+            </Carousel>
+          }
+              <h2 className="background"><span>Productos</span></h2>
+          <article className="products-checkbox">
+            <div className="container-check">
+              {state.filters.map((filter, index)=>(
+                <div key={index}>
+                  <p className="title-check-form">{filter.title}</p>
+                  <form action="" id="" className="form-checkbox">
+                    {filter.values.map((value, index)=>(
+                      <div key={index}>
+                        <input type="checkbox" className="checkbox" id={value} name={value} value={value} 
+                        onChange={(e)=>{updateFilters(e)}}/>
+                        <label htmlFor={value}>{value}</label><br></br>
+                      </div>
+                    ))}
+                  </form>
+                </div>
+              ))}
+            </div>
+            {/* Products list */}
+            <div className="products-container">
+                {state.products.length === 0 ? (
+                    <p>No hay productos para mostrar</p>
+                ) : (
+                    state.filteredProducts.map(product =>{
+                        return(
+                            <Card
+                                product={product}
+                                key={product.id}
+                            />
+                        )
+                    })
+                )}
+            </div>
+          </article>
+      </section>
 
-    );
+  );
 }
 
 export default Home;

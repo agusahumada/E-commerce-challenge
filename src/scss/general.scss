@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
 // COLORS
 $headerColor: #F5F5F5;
 $aquamarine: #1DB779;
 $darkGrey: #1E1E1E;
 $lightGrey: #9B9B9B;
+//FONTS
+$fontPrimary: 'Open Sans',
+sans-serif;
 html {
     &.test {
         overflow: hidden;

@@ -1,11 +1,7 @@
-import Logo_1 from '../Images/facebook-icon.svg'
-import Logo_2 from '../Images/twitter-icon.svg'
-import Logo_3 from '../Images/youtube-icon.svg'
-
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="products-list_1">
+      <div className="products-list-1">
         <p className="title-list-footer">PRODUCTOS</p>
         <p>Compre junto</p>
         <p>Kit look </p>
@@ -13,7 +9,7 @@ const Footer = () => {
         <p> Shop the look</p>
         <p>Sin Stock</p>
       </div>
-      <div className="products-list_2">
+      <div className="products-list-2">
         <p className="title-list-footer">MI CUENTA</p>
         <p>Mis pedidos</p>
         <p>Whishlist</p>
@@ -21,23 +17,23 @@ const Footer = () => {
         <p> Mis listas</p>
         <p>Mis recetas</p>
       </div>
-      <div className="products-list_3">
+      <div className="products-list-3">
         <p className="title-list-footer">CONTACTANOS</p>
         <p>Nuestras Sucursales</p>
         <p>Horarios y Teléfonos</p>
         <p>Completá tu compra</p>
       </div>
-      {/* <div className="media-icons">
+      <div className="media-icons">
         <a href="#">
-          <img src={Logo_1} alt="" />
+          <img src="./Images/fb_icon.svg" alt="" />
         </a>
         <a href="#">
-          <img src={Logo_2} alt="" />
+          <img src="./Images/tr_icon.svg" alt="" />
         </a>
         <a href="#">
-          <img src={Logo_3} alt="" />
+          <img src="./Images/yt_icon.svg" alt="" />
         </a>
-      </div> */}
+      </div>
     </div>
   );
 };
